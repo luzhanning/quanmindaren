@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/love/love",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/choose/choose",
+    "pages/fei/fei",
+    "pages/rank/rank",
+    "pages/jack/jack"
+  ],
+  "window": {
+    "backgroundTextStyle": "custom",
+    "navigationBarBackgroundColor": "#bbbbbb",
+    "navigationBarTitleText": "全民打人",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#eeeeee",
+    "selectedColor": "#666666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_HL.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "用户中心",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_HL.png"
+      }
+    ]
+  }
+}

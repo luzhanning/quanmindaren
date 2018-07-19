@@ -1,0 +1,75 @@
+/* pages/rank/rank.wxss */
+page{
+  height:100%;
+}
+.list-text{
+  font-size: 20px;
+  max-width: 200rpx;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color:#444444;
+  margin-left: 50rpx;
+}
+.first{
+  margin-left: 100rpx;
+  background: #F34B36;
+  font-size: 52px;
+  color: #ffffff;
+  width: 40rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius:5px 
+}
+.second{
+  
+  margin-left: 105rpx;
+  background:#FF8E40;
+  font-size: 40px;
+  color: #ffffff;
+  width: 40rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius:5px
+}
+.third{
+  margin-left: 105rpx;
+  background:#FFC42D;
+  font-size: 35px;
+  color: #ffffff;
+  width: 40rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius:5px
+}
+.rest{
+  margin-left: 105rpx;
+  background:#eeeeee;
+  font-size: 35px;
+  color: #ffffff;
+  width: 35rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius:5px
+}
+
+  .container1 {
+  height: 100%;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80rpx 0;
+  box-sizing: border-box;
+} 
+.page {
+  width: 100%;
+    height:100%;
+    background:linear-gradient(120deg, lightgray, white);
+    background-size: 100% 100%;
+}

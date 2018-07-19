@@ -1,0 +1,80 @@
+/* pages/love/love.wxss */
+page{
+  height:100%
+}
+.chessboard
+{
+	background:white;
+  
+	margin: 35rpx;
+	height: 650rpx;
+	width: 650rpx;
+  border:8rpx solid black;
+	border-radius: 50rpx;
+  border-width: 10rpx;
+	display: flex;
+	flex-direction: column;
+	padding: 6rpx;
+}
+
+
+.chessboard .row
+{
+	display: flex;
+	flex: 1;
+}
+
+.chessboard .row .column
+{
+	font-size: 20px;
+	color: #776e65;
+	flex: 1;
+	margin: 0rpx;
+	
+	border-radius: 0rpx;
+  
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+}
+.usermotto {
+  
+  margin-top: 25px;
+  font-weight: 700;
+  text-align: center;
+  
+}
+.usermotto1 {
+  
+  margin-top: 100px;
+  font-weight: 600;
+  align-self: center;
+  
+}
+.box{
+    margin-top:50rpx;
+    margin-bottom: 30rpx;
+    width: 600rpx;
+    margin-left: 160rpx;
+    margin-right: auto;
+}
+.score{
+  font-weight: 700;
+}
+.score1{
+  font-weight: 700;
+  border:5rpx solid black;
+	border-radius: 10rpx;
+}
+.but{
+  
+  margin-left:200rpx;
+  align-self: center;
+}
+.page {
+  width: 100%;
+    height:100%;
+    background:linear-gradient(120deg, lightgray, white);
+    background-size: 100% 100%;
+}

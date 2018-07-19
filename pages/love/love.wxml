@@ -1,0 +1,64 @@
+<view class="page">
+<block wx:if="{{seconds>0}}">
+<image  src="../images/quanmin1.png" class="but"style="width:180px; height:100px;" ></image>
+
+<block wx:if="{{score<20}}">
+<View class="chessboard">
+	<View class="row" wx:for="{{chessboardDatas}}" wx:for-index="idx" wx:for-item="chessboardColumn">
+		<View class="column" wx:for="{{chessboardColumn}}" wx:for-index="idy" wx:for-item="chessboardRow">
+    <image wx:if="{{chessboardRow!=0}}" data-x='{{idx}}' data-y='{{idy}}' bindtap ="clickon" src="{{person}}" style="width:90px; height:80px;">
+    </image>
+    <view wx:else>
+    </view>
+    </View>
+	</View>
+</View>
+</block>
+<image wx:else src="{{person1}}"bindtap ="click"
+        style="margin-left:35px;width:300px; height:300px;border:8rpx solid black;border-radius: 50rpx;background-color:white"
+        ></image>
+
+   <progress wx:if="{{percent<=50}}" percent="{{percent}}" stroke-width="12" style="border-radius: 10rpx;margin-left:35rpx;margin-right:35rpx"/>
+   <progress wx:if="{{percent>50&&percent<100}}" percent="{{percent}}" stroke-width="12" color ="yellow "style="border-radius: 10rpx;margin-left:35rpx;margin-right:35rpx"/>
+   <view class="box"wx:if="{{percent==100}}">
+        <text  style="color:red;font-weight:700;margin-left:30rpx;margin:{{45+a}}rpx">baby！你进入了暴走状态   </text>
+</view>
+   <progress wx:if="{{percent==100}}" percent="{{percent}}" stroke-width="12" color ="red "style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx;margin:{{45+a}}rpx"/>
+<view class="box">
+        <text class="score1">你打死了{{score}}个{{hit}}   </text>
+        
+</view>
+<view class="section" >
+        <text class="usermotto1" style="margin-right:40rpx;">还剩{{seconds}}秒</text>
+        <image src="../images/restart.png"style="margin-left:20rpx;" bindtap ="reset"style="width:20px; height:20px;"></image>
+        
+</view>
+
+
+</block>
+<block wx:else>
+  <pre class="but"><div style="position: relative;">
+  <div style="position: absolute;">
+  <block wx:if="{{person!=''}}">
+  <image class="but" src="../images/dead.png"style="width:143px; height:144px;margin-left:38rpx;margin-top:33px;"></image>
+  </block>
+    
+  </div>
+  <image src="{{person}}"style="width:120px; height:120px;position: center;margin-left:60rpx;margin-top:54px;-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; "></image>
+</div>
+</pre>
+
+<view class="usermotto">
+        你好变态哦
+</view>
+<view class="usermotto"style="border:5rpx solid black;border-radius: 10rpx;margin-left:200rpx;margin-right:200rpx">
+        {{score}}个{{hit}}被你打死了
+</view>
+<view class="box"style="margin-left:200rpx;">
+        <image class="score"bindtap ="reset" src="../images/replay.png"style="width:180px; height:75px;margin-top:200rpx;"> </image>
+        <image class="score"bindtap ="choose" src="../images/huan.png"style="width:180px; height:75px;"></image>
+</view>
+</block>
+</view>
+
+

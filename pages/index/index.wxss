@@ -1,0 +1,53 @@
+/**index.wxss**/
+page{
+  height:100%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+
+  align-self: center;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+
+}
+
+.usermotto {
+  margin-top: 20px;
+  margin-right: 45rpx;
+  margin-left: 35rpx;
+  align-self: center;
+  
+}
+.page {
+  width: 100%;
+    height:100%;
+    background:linear-gradient(120deg, lightgray, white);
+    background-size: 100% 100%;
+}
+.kaishi{
+ width:50px; 
+  height:20px;
+}
+.box{
+   width: 200px;
+    height:100px;
+}
+.box .kaishi{
+   width:50px; 
+  height:20px;
+}
+.hover{
+  font-weight:700; 
+  color:#666666;
+}

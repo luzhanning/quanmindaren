@@ -1,0 +1,35 @@
+<!--pages/rank/rank.wxml-->
+<view class="page">
+<view class="container1">
+<image  src="../images/gold.png"style="margin-left:189rpx;width:180px; height:130px;" ></image>
+  <view style="border-radius:34px;border:solid #999999;margin-left: 50rpx;margin-right: 50rpx;">
+  <view style="margin-top:25rpx;border-bottom:solid #999999;">
+<text class='list-id first' >1</text>
+<text class='list-text'>飞飞飞</text>
+<text class='list-text'style="position:left">被打1895次</text>
+</view>
+<view style="margin-top: 50rpx;border-bottom:solid #999999;">
+<text class='list-id second' >2</text>
+<text class='list-text'>Jack</text>
+<text class='list-text'>1126次</text>
+</view>
+<view style="margin-top: 50rpx;border-bottom:solid #999999;">
+<text class='list-id third' >3</text>
+<text class='list-text'>于航</text>
+<text class='list-text'>896次</text>
+</view>
+
+
+<view style="margin-top: 50rpx;">
+<text class='rest' >4</text>
+<text class='list-text'>KOA</text>
+<text class='list-text'>0次</text>
+</view>
+</view>
+
+</view>
+
+
+
+
+</view>
