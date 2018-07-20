@@ -21,10 +21,10 @@
 
 
 
-   <progress wx:if="{{percent<=30}}" percent="{{percent}}" active-mode="forwards"stroke-width="12" color ="red"style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx;margin:{{35+a}}rpx"/>
-   <progress wx:if="{{percent<60&&percent>30}}" percent="{{percent}}" active-mode="forwards"stroke-width="12" color ="yellow "style="border-radius: 10rpx;margin-left:35rpx;margin-right:35rpx"/>
+   <progress wx:if="{{percent<=30}}" percent="{{percent}}" stroke-width="12" color ="red"style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx;margin:{{35+a}}rpx"/>
+   <progress wx:if="{{percent<60&&percent>30}}" percent="{{percent}}" stroke-width="12" color ="yellow "style="border-radius: 10rpx;margin-left:35rpx;margin-right:35rpx"/>
 
-   <progress wx:if="{{percent>=60}}" percent="{{percent}}" stroke-width="12" active-mode="forwards" style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx"/>
+   <progress wx:if="{{percent>=60}}"  percent="{{percent}}" stroke-width="12" active-mode="forwards" style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx"/>
 <view class="box">
         <text class="score1"style="margin-right:100rpx;">你打死了{{score}}个{{hit}}   </text>
         <image src="../images/restart.png"style="margin-left:200rpx;" bindtap ="reset"style="width:20px; height:20px;"></image>
@@ -52,7 +52,7 @@
 <view class="usermotto"style="border:5rpx solid black;border-radius: 10rpx;margin-left:200rpx;margin-right:200rpx">
         {{score}}个{{hit}}被你打死了
 </view>
-<view class="box"style="margin-left:200rpx;">
+<view class="box"style="margin-left:200rpx;margin-top:100rpx;">
         <image class="score"bindtap ="reset" src="../images/replay.png"style="width:180px; height:75px;margin-top:200rpx;"> </image>
         <image class="score"bindtap ="choose" src="../images/huan.png"style="width:180px; height:75px;"></image>
 </view>

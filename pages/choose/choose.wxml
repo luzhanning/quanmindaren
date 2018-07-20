@@ -12,23 +12,28 @@
 <block wx:if="{{index==0}}">
 </block>
 <block wx:elif="{{index==2}}">
-<text style="margin-left:210rpx;margin-top:200rpx;font-weight:700;">打Jack是进度条衰减模式  </text>
+<text style="margin-left:210rpx;margin-top:200rpx;font-weight:700;color:#555555">打Jack是进度条衰减模式  </text>
+<text style="margin-left:268rpx;margin-top:200rpx;font-weight:700;color:#555555">难度:★★★ </text>
 <image class="but1" bindtap="jack" src="../images/confirm.png"style="width:153px; height:61px;"></image>
 
 </block>
 <block wx:elif="{{index==3}}">
-<text style="margin-left:188rpx;margin-top:200rpx;font-weight:700;">打飞飞飞他将保持欠打状态  </text>
+<text style="margin-left:188rpx;margin-top:200rpx;font-weight:700;color:#555555;">打飞飞飞他将保持欠打状态  </text>
+<text style="margin-left:268rpx;margin-top:200rpx;font-weight:700;color:#555555">难度:☆</text>
 <image class="but1" bindtap="fei" src="../images/confirm.png"style="width:153px; height:61px;"></image>
 
 </block>
 <block wx:elif="{{index==4}}">
-<text style="margin-left:160rpx;margin-top:200rpx;font-weight:700;">20秒打死飞飞飞200次解锁npc</text>
+<text style="margin-left:208rpx;margin-top:200rpx;font-weight:700;color:#555555;text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;">n皮c会瞎几把跑并且分身</text>
+<text style="margin-left:268rpx;margin-top:200rpx;font-weight:700;color:#555555">难度:★★★☆ </text>
+<image class="but1" bindtap="npc" src="../images/confirm.png"style="width:153px; height:61px;"></image>
 </block>
 <block wx:elif="{{index==5}}">
-<button style="font-weight:700;margin-left:100rpx;margin-right:100rpx;margin-top:100rpx;">你不能打你的爸爸</button>
+<button style="font-weight:700;margin-left:100rpx;margin-right:100rpx;margin-top:100rpx;color:#555555">你不能打你的爸爸</button>
 </block>
 <block wx:else> 
-<text style="margin-left:220rpx;margin-top:200rpx;font-weight:700;">打于航是20秒竞速模式  </text>
+<text style="margin-left:220rpx;margin-top:200rpx;font-weight:700;color:#555555">打于航是20秒竞速模式  </text>
+<text style="margin-left:268rpx;margin-top:200rpx;font-weight:700;color:#555555">难度:★★ </text>
 <image class="but1" src="../images/confirm.png" bindtap="toast"style="width:153px; height:61px;"></image>
 </block> 
 </view> 

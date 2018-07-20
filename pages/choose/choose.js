@@ -80,6 +80,12 @@ Page({
       url: '../jack/jack'
     })
   },
+  npc: function () {
+
+    wx.navigateTo({
+      url: '../npc/npc'
+    })
+  },
   onLoad: function (options) {
     
   },

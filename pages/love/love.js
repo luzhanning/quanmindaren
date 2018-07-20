@@ -48,7 +48,7 @@ Page({
       
       this.setData({
         person: '../images/yuhang.png',
-        person1: '../images/yuhang2.jpg',
+        person1: '../images/yuhang2.png',
      
         
       })
@@ -64,14 +64,9 @@ Page({
   },
 
   onReady: function(){
-    var that = this;
-    that.data.setInter = setInterval(function () {
-      that.setData({
-        a: that.data.a * (-1)
-
-      });
+    
       
-    }.bind(this), 70)
+
     var interval = setInterval(function () {
       this.setData({
         seconds: this.data.seconds - 1
@@ -80,7 +75,16 @@ Page({
     
     
   },
+  onShow: function () {
+    var that = this;
+    that.data.setInter = setInterval(function () {
+      that.setData({
+        a: that.data.a * (-1)
 
+      });
+
+    }.bind(this), 70)
+  },
   choose: function () {
     wx.navigateBack({ changed: true })
   },

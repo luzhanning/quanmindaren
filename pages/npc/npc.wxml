@@ -18,14 +18,21 @@
 	</View>
 </View>
 </block>
-<image wx:else src="{{person1}}"bindtap ="click"
-        style="margin-left:{{45+4*a}}rpx;width:300px; height:300px;border:8rpx solid black;border-radius: 50rpx;background-color:white"
-        ></image>
+<View wx:else class="chessboard">
+	<View class="row" wx:for="{{chessboardDatas}}" wx:for-index="idx" wx:for-item="chessboardColumn">
+		<View class="column" wx:for="{{chessboardColumn}}" wx:for-index="idy" wx:for-item="chessboardRow">
+    <image wx:if="{{chessboardRow!=0}}" data-x='{{idx}}' data-y='{{idy}}' bindtap ="click" src="{{person}}" style="width:90px; height:80px;">
+    </image>
+    <view wx:else>
+    </view>
+    </View>
+	</View>
+</View>
 
    <progress wx:if="{{percent<100}}" active active-mode="forwards" percent="{{percent}}" stroke-width="12" style="border-radius: 10rpx;margin-left:35rpx;margin-right:35rpx"/>
    
    <view class="box"wx:if="{{percent==100}}">
-        <text  style="color:red;font-weight:700;margin-left:30rpx;margin:{{45+a}}rpx">baby！你进入了暴走状态   </text>
+        <text  style="color:red;font-weight:700;margin-left:{{45+a}}rpx">baby！你进入了暴走状态   </text>
 </view>
    <progress wx:if="{{percent==100}}" percent="{{percent}}" stroke-width="12" color ="red "style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx;margin:{{45+a}}rpx"/>
 <view class="box">

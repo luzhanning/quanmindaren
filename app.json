@@ -7,7 +7,8 @@
     "pages/choose/choose",
     "pages/fei/fei",
     "pages/rank/rank",
-    "pages/jack/jack"
+    "pages/jack/jack",
+    "pages/npc/npc"
   ],
   "window": {
     "backgroundTextStyle": "custom",

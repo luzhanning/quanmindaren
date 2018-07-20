@@ -58,14 +58,7 @@ Page({
   },
 
   onReady: function () {
-    var that = this;
-    that.data.setInter = setInterval(function () {
-      that.setData({
-        a: that.data.a * (-1)
-        
-      });
-      
-    }.bind(this), 70)
+   
     
     
     var interval = setInterval(function () {
@@ -134,6 +127,16 @@ Page({
     });
 
 
+  },
+  onShow: function(){
+    var that = this;
+    that.data.setInter = setInterval(function () {
+      that.setData({
+        a: that.data.a * (-1)
+
+      });
+
+    }.bind(this), 70)
   },
   reset: function () {
     var chessDefaultDatas = [
