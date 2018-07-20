@@ -22,7 +22,17 @@ Page({
       this.setData({
         index: app.globalData.index
       })
-      if (app.globalData.people[app.globalData.index] == '于航') {
+      if (app.globalData.index==0) {
+
+
+        this.setData({
+          person1: '',
+
+        })
+
+
+      }
+      if (app.globalData.index==1) {
 
 
         this.setData({

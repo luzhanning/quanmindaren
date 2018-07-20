@@ -49,9 +49,9 @@ Page({
 
       this.setData({
         person: '../images/npc.png'
-       
-      })
 
+      })
+      innerAudioContext.src = 'http://mp3.flash127.com/music/43834.mp3'
 
     }
 
@@ -150,6 +150,9 @@ Page({
     clearInterval(this.data.setInter2)
   },
   click: function (e) {
+    innerAudioContext.stop();
+
+    innerAudioContext.play();
     var array = this.data.chessboardDatas;
     array[e.currentTarget.dataset.x][e.currentTarget.dataset.y] = 0;
     var num3 = util.getRandomNum(0, 11);
@@ -164,7 +167,9 @@ Page({
     });
   },
   clickon: function (e) {
+    innerAudioContext.stop();
 
+    innerAudioContext.play();
     var array = this.data.chessboardDatas;
     array[e.currentTarget.dataset.x][e.currentTarget.dataset.y] = 0;
 

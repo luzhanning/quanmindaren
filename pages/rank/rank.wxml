@@ -7,7 +7,7 @@
   <view style="margin-top:25rpx;border-bottom:solid #999999;">
 <text class='list-id first' >1</text>
 <text class='list-text'>飞飞飞</text>
-<text class='list-text'style="position:left">1895</text>
+<text class='list-text'style="position:left">1895次</text>
 </view>
 <view style="margin-top: 50rpx;border-bottom:solid #999999;">
 <text class='list-id second' >2</text>
