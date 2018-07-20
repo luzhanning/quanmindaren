@@ -91,7 +91,7 @@ Page({
      
       }
      
-    }.bind(this), 500)
+    }.bind(this), 400)
     
      
     that.data.setInter2 = setInterval(function () {
@@ -145,9 +145,9 @@ Page({
   onUnload: function () {
     var that = this;
 
-    clearInterval(that.data.setInter)
-    clearInterval(that.data.setInter1)
-    clearInterval(that.data.setInter2)
+    clearInterval(this.data.setInter)
+    clearInterval(this.data.setInter1)
+    clearInterval(this.data.setInter2)
   },
   click: function (e) {
     var array = this.data.chessboardDatas;
@@ -185,6 +185,42 @@ Page({
 
   },
   reset: function () {
+    clearInterval(this.data.setInter)
+    clearInterval(this.data.setInter1)
+    clearInterval(this.data.setInter2)
+    var that = this;
+    that.data.setInter = setInterval(function () {
+      that.setData({
+        a: that.data.a * (-1)
+
+      });
+
+    }.bind(this), 70)
+
+    that.data.setInter1 = setInterval(function () {
+      if (that.data.score < 20) {
+        var array = that.data.chessboardDatas
+        that.swtichArray(array);
+        that.setData({
+          chessboardDatas: array
+
+        });
+
+      }
+
+    }.bind(this), 400)
+
+
+    that.data.setInter2 = setInterval(function () {
+      if (that.data.score >= 20) {
+        var array = that.data.chessboardDatas
+        that.swtichArray1(array);
+        that.setData({
+          chessboardDatas: array
+
+        });
+      }
+    }.bind(this), 300)
     var chessDefaultDatas = [
       [0, 0, 0],
       [0, 0, 0],
