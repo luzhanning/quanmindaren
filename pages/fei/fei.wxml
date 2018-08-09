@@ -1,17 +1,20 @@
-<view class="page">
-<block wx:if="{{seconds>0}}">
-<image  src="../images/quanmin1.png" bindtap="laofei" class="but"style="margin-left:{{200+4*a}}rpx;width:180px; height:100px;" ></image>
-<view class="box">
-        
-        
-</view>
+<view class="ripple" style="{{rippleStyle}}background-color:{{circleColor}}"></view>
 
-        <image src="../images/feifeifei.png"bindtap ="feifeifei"class="person" style="margin-left:{{55+4*a}}rpx;"></image>
+<view class="page" >
+
+<block wx:if="{{seconds>0}}">
+<block wx:for="{{array}}" wx:for-item="i" >
+<p class="ripple1" style="{{i}}font-weight:bold;color:{{circleColor}}">{{danmu}} </p>
+</block>
+<image  src="../images/quanmin1.png"  class="but"style="margin-left:{{200+4*a}}rpx;width:180px; height:100px;" ></image>
+
+    <image src="../images/feifeifei.png"bindtap ="feifeifei"class="person" style="background-color: white;margin-left:{{60+4*a}}rpx;"></image>
+
 
     <text  style="color:red;font-weight:700;margin-top:30rpx;margin:{{200+a}}rpx">baby！你进入了暴走状态   </text>
-  <progress  percent="100" stroke-width="12" color ="red "style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx;margin:{{45+a}}rpx"/>
+  <progress  percent="100" stroke-width="12" color ="red "style="border-radius: 10rpx;margin-left:45rpx;margin-right:45rpx;margin:{{60+a}}rpx"/>
 <view class="box">
-        <text class="score1"bindtap ="feifei">你打死了{{score}}个{{hit}}</text>
+        <text class="score1"bindtap ="feifei"style="border:5rpx solid white;border-radius: 10rpx;">你打死了{{score}}个{{hit}}</text>
         
 </view>
 <view class="section">
@@ -36,7 +39,7 @@
 <view class="usermotto">
         你好变态哦
 </view>
-<view class="usermotto">
+<view class="usermotto"style="border:5rpx solid white;border-radius: 10rpx;margin-left:200rpx;margin-right:200rpx;">
         {{score}}个{{hit}}被你打死了
 </view>
 

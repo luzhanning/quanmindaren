@@ -35,14 +35,14 @@ page{
 	justify-content: center;
 }
 .usermotto {
-  
+  color:white;
   margin-top: 25px;
   font-weight: 700;
   text-align: center;
   
 }
 .usermotto1 {
-  
+  color:white;
   margin-top: 100px;
   font-weight: 600;
   align-self: center;
@@ -55,6 +55,30 @@ page{
     margin-left: 160rpx;
     margin-right: auto;
 }
+.ripple {
+    pointer-events:none;
+    border-radius: 10px;
+    height:20px;
+    width:20px;
+    margin-top: -90px;
+    position: absolute;
+    -webkit-transform: scale(0);
+}
+@-webkit-keyframes ripple {
+    100% {
+    -webkit-transform: scale(12);
+    transform: scale(3);
+    background-color: transparent;
+    }
+}
+.ripple1 {
+    pointer-events:none;
+   font-size:15px;
+    opacity:0.4;
+    margin-top: -104px;
+    margin-left:-15px;
+    position: absolute;
+}
 .box1{
     margin-top:10rpx;
     margin-bottom: 30rpx;
@@ -64,29 +88,31 @@ page{
 }
 
 .score{
+  color:white;
   font-weight: 700;
 }
 .but{
-  
+  color:white;
   margin-left:200rpx;
   align-self: center;
 }
 .page {
   width: 100%;
     height:100%;
-    background:linear-gradient(120deg, lightgray, white);
+    background:linear-gradient(120deg, rgba(58, 58, 58, 0.808), rgba(131, 130, 131, 0.555));
     background-size: 100% 100%;
 }
 .score1{
+  color:white;
   font-weight: 700;
-  border:5rpx solid black;
+  border:5rpx solid white;
 	border-radius: 10rpx;
 }
 .person{
   margin-left:35px;
   width:300px; 
   height:300px;
-  border:8rpx solid black;
+  border:8rpx solid #555555;
   border-radius: 50rpx;
   background-color:white;
 }

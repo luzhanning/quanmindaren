@@ -1,0 +1,118 @@
+<view class="page"style="display:flex;justify-content: center;flex-direction:column">
+
+  
+ 
+  <view style="margin-left:55px;margin-right:55px;margin-top:10px;" >
+    <view style="border:solid #888888 1px;background-color:black;">
+      <p style="font-size:11px;color:white;font-weight:bold;margin:19px;line-height:30px">于航榜</p>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#F34B36;font-weight:bold;margin:19px;line-height:30px;">1</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{yy1}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px;padding-right:10px">{{y1}}</p>
+      </div>
+    </view>
+    <view style="background-color:#111111;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#FF8E40;font-weight:bold;margin:19px;line-height:30px">2</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{yy2}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{y2}}</p>
+      </div>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;border-bottom:solid #888888 1px;">
+      <p style="font-size:15px;color:#FFC42D;font-weight:bold;margin:19px;line-height:30px">3</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{yy3}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{y3}}</p>
+      </div>
+    
+    </view>
+    
+  </view>
+<view style="margin-left:55px;margin-right:55px;" >
+    <view style="border:solid #888888 1px;background-color:black;">
+      <p style="font-size:11px;color:white;font-weight:bold;margin:19px;line-height:30px">Jack榜</p>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#F34B36;font-weight:bold;margin:19px;line-height:30px;">1</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{jj1}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px;padding-right:10px">{{j1}}</p>
+      </div>
+    </view>
+    <view style="background-color:#111111;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#FF8E40;font-weight:bold;margin:19px;line-height:30px">2</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{jj2}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{j2}}</p>
+      </div>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;border-bottom:solid #888888 1px;">
+      <p style="font-size:15px;color:#FFC42D;font-weight:bold;margin:19px;line-height:30px">3</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{jj3}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{j3}}</p>
+      </div>
+    
+    </view>
+    
+  </view>
+
+<view style="margin-left:55px;margin-right:55px;" >
+    <view style="border:solid #888888 1px;background-color:black;">
+      <p style="font-size:11px;color:white;font-weight:bold;margin:19px;line-height:30px">飞飞飞榜</p>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#F34B36;font-weight:bold;margin:19px;line-height:30px;">1</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{ff1}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px;padding-right:10px">{{f1}}</p>
+      </div>
+    </view>
+    <view style="background-color:#111111;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#FF8E40;font-weight:bold;margin:19px;line-height:30px">2</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{ff2}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{f2}}</p>
+      </div>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;border-bottom:solid #888888 1px;">
+      <p style="font-size:15px;color:#FFC42D;font-weight:bold;margin:19px;line-height:30px">3</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{ff3}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{f3}}</p>
+      </div>
+    
+    </view>
+    
+  </view>
+  <view style="margin-left:55px;margin-right:55px;" >
+    <view style="border:solid #888888 1px;background-color:black;">
+      <p style="font-size:11px;color:white;font-weight:bold;margin:19px;line-height:30px">npc榜</p>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#F34B36;font-weight:bold;margin:19px;line-height:30px;">1</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{nn1}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px;padding-right:10px">{{n1}}</p>
+      </div>
+    </view>
+    <view style="background-color:#111111;border-left:solid #888888 1px;border-right:solid #888888 1px;">
+      <p style="font-size:15px;color:#FF8E40;font-weight:bold;margin:19px;line-height:30px">2</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{nn2}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{n2}}</p>
+      </div>
+    </view>
+    <view style="background-color:black;border-left:solid #888888 1px;border-right:solid #888888 1px;border-bottom:solid #888888 1px;">
+      <p style="font-size:15px;color:#FFC42D;font-weight:bold;margin:19px;line-height:30px">3</p>
+      <p style="font-size:15px;color:white;font-weight:bold;line-height:30px">{{nn3}}</p>
+      <div style="float: right">
+        <p style="font-size:15px;color:white;font-weight:bold;line-height:30px;padding-right:10px">{{n3}}</p>
+      </div>
+    
+    </view>
+    
+  </view>
+</view>

@@ -2,6 +2,14 @@
 page{
   height:100%
 }
+.ripple1 {
+  pointer-events:none;
+   font-size:15px;
+    opacity:0.4;
+    margin-top: -104px;
+    margin-left:-15px;
+    position: absolute;
+}
 .chessboard
 {
 	background:white;
@@ -9,7 +17,7 @@ page{
 	margin: 35rpx;
 	height: 650rpx;
 	width: 650rpx;
-  border:8rpx solid black;
+  border:8rpx solid #555555;
 	border-radius: 50rpx;
   border-width: 10rpx;
 	display: flex;
@@ -17,6 +25,22 @@ page{
 	padding: 6rpx;
 }
 
+.ripple {
+  pointer-events:none;
+    border-radius: 10px;
+    height:20px;
+    width:20px;
+    margin-top: -90px;
+    position: absolute;
+    -webkit-transform: scale(0);
+}
+@-webkit-keyframes ripple {
+    100% {
+    -webkit-transform: scale(12);
+    transform: scale(3);
+    background-color: transparent;
+    }
+}
 .chessboard .row
 {
 	display: flex;
@@ -38,14 +62,14 @@ page{
 	justify-content: center;
 }
 .usermotto {
-  
+  color:white;
   margin-top: 25px;
   font-weight: 700;
   text-align: center;
   
 }
 .usermotto1 {
-  
+  color:white;
   margin-top: 100px;
   font-weight: 600;
   align-self: center;
@@ -59,22 +83,23 @@ page{
     margin-right: auto;
 }
 .score{
+  color:white;
   font-weight: 700;
 }
 .score1{
+  color:white;
   font-weight: 700;
-  border:5rpx solid black;
+  border:5rpx solid white;
 	border-radius: 10rpx;
 }
-
 .but{
-  
+  color:white;
   margin-left:200rpx;
   align-self: center;
 }
 .page {
   width: 100%;
     height:100%;
-    background:linear-gradient(120deg, lightgray, white);
+    background:linear-gradient(120deg, rgba(139, 138, 138, 0.808), rgba(145, 142, 145, 0.555));
     background-size: 100% 100%;
 }

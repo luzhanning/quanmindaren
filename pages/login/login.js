@@ -4,7 +4,11 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    a1:'',
+    a2: '',
+    a3: '',
+    a4: ''
   },
   //事件处理函数
   bindViewTap: function () {
@@ -13,6 +17,79 @@ Page({
     })
   },
   onLoad: function () {
+    var that = this
+    wx.getUserInfo({
+      success: function (res) {
+    wx.request({
+      url: 'https://www.beico.hk/highScore?type=1&nickname='+res.userInfo.nickName,
+      method: 'GET',
+      success: function (res) {
+        // success
+      
+        that.setData({
+          a1:res.data
+        })
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
+      }
+    })
+        wx.request({
+          url: 'https://www.beico.hk/highScore?type=2&nickname=' + res.userInfo.nickName,
+          method: 'GET',
+          success: function (res) {
+            // success
+          
+            that.setData({
+              a2: res.data
+            })
+          },
+          fail: function () {
+            // fail
+          },
+          complete: function () {
+            // complete
+          }
+        })
+        wx.request({
+          url: 'https://www.beico.hk/highScore?type=3&nickname=' + res.userInfo.nickName,
+          method: 'GET',
+          success: function (res) {
+            // success
+          
+            that.setData({
+              a3: res.data
+            })
+          },
+          fail: function () {
+            // fail
+          },
+          complete: function () {
+            // complete
+          }
+        })
+        wx.request({
+          url: 'https://www.beico.hk/highScore?type=4&nickname=' + res.userInfo.nickName,
+          method: 'GET',
+          success: function (res) {
+            // success
+           
+            that.setData({
+              a4: res.data
+            })
+          },
+          fail: function () {
+            // fail
+          },
+          complete: function () {
+            // complete
+          }
+        })
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

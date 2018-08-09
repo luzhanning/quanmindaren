@@ -1,14 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/love/love",
+    "pages/yuhang/yuhang",
     "pages/logs/logs",
     "pages/login/login",
     "pages/choose/choose",
     "pages/fei/fei",
     "pages/rank/rank",
     "pages/jack/jack",
-    "pages/npc/npc"
+    "pages/npc/npc",
+    "pages/pai/pai",
+    "pages/custom/custom"
   ],
   "window": {
     "backgroundTextStyle": "custom",
@@ -26,6 +28,19 @@
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_HL.png"
       },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "自定义榜",
+        "iconPath": "images/rank.png",
+        "selectedIconPath": "images/rank_HL.png"
+      },
+      {
+        "pagePath": "pages/pai/pai",
+        "text": "四傻榜",
+        "iconPath": "images/pai.png",
+        "selectedIconPath": "images/pai_HL.png"
+      },
+      
       {
         "pagePath": "pages/login/login",
         "text": "用户中心",

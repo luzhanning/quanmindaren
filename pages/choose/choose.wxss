@@ -1,6 +1,6 @@
 /* pages/choose/choose.wxss */
 page{
-  height:100%
+  height:80%
 }
 .title {
   margin-bottom: auto;
@@ -8,6 +8,7 @@ page{
   margin-right: 100rpx;
   margin-left: 100rpx;
   font-size: 50rpx;
+  color:black;
   font-weight:700;
   align-self: center;
   text-align: center;
@@ -15,7 +16,7 @@ page{
   border-radius: 50rpx;
 }
 .usermotto {
-  color: #777777;
+  color: #ffffff;
   margin-top: 50px;
   text-align: center;
   font-size: 20px;
@@ -28,13 +29,74 @@ page{
 
 }
 .but1{
-  margin-top:123rpx;
+  margin-top:57rpx;
   margin-left:214rpx;
   
 }
 .page {
   width: 100%;
     height:100%;
-    background:linear-gradient(120deg, lightgray, white);
+    background:linear-gradient(120deg, rgba(58, 58, 58, 0.808), rgba(131, 130, 131, 0.555));
     background-size: 100% 100%;
+}
+.ripple {
+    background-color: #999999;
+    border-radius: 100%;
+    height:10px;
+    width:10px;
+    margin-top: -90px;
+    position: absolute;
+    -webkit-transform: scale(0);
+}
+@-webkit-keyframes ripple {
+    100% {
+    -webkit-transform: scale(12);
+    transform: scale(12);
+    background-color: transparent;
+    }
+}
+.circle1{
+width: 45px;
+ height: 45px;     
+background-color:#EE6363; 
+border-radius: 50%;  
+margin-left: 50px;
+    display:inline-block;
+}
+.circle2{
+
+width: 45px;
+ height: 45px;     
+background-color:black; 
+border-radius: 50%;  
+margin-left: 33px;
+    display:inline-block;
+}
+.circle3{
+ 
+width: 45px;
+ height: 45px;     
+background-color:#5F9EA0; 
+border-radius: 50%;  
+margin-left: 30px;
+display:inline-block;
+
+}
+.circle4{
+  
+  display:inline-block;
+width: 45px;
+ height: 45px;     
+background-color:#8B5a00; 
+border-radius: 50%;  
+margin-left: 30px;
+
+}
+
+select{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid black;
 }

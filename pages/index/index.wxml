@@ -1,11 +1,12 @@
 <!--index.wxml-->
+
 <view class="page">
-<view class="container">
-<image  src="../images/quanmin.png"style="width:180px; height:130px;" >
+<view class="container2">
+<image  src="../images/quanmin.png"style="width:185px; height:143px;" >
     
   </image>
   
-  <view class="userinfo"style="margin-top:100rpx;">
+  <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -15,11 +16,12 @@
   
   
   
-  <image  class="usermotto" src="../images/play.png"style="width:180px; height:75px;" bindtap="choose">
-  
+  <image  class="usermotto" src="../images/play.png"style="width:180px; height:75px;" bindtap="choose">  </image>
+  <image  class="usermotto" src="../images/zidingyidaren.png"style="width:180px; height:75px;" bindtap="CustomChoose">
   </image>
-  
-  <navigator style="font-weight:550; color:#666666" url="../rank/rank" hover-class='hover'>点击查看排行榜>></navigator> 
-    
+
+    <ad unit-id="adunit-5be821c70c12aba5"></ad>
   </view>
+ 
+
   </view>

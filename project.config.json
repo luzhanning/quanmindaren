@@ -13,8 +13,13 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx2f4d7885213cce05",
-	"projectname": "%E5%85%A8%E6%B0%91%E6%89%93%E6%9E%B6",
-	"isGameTourist": false,
+	"projectname": "%E5%85%A8%E6%B0%91%E6%89%93%E4%BA%BA",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "./",
+	"miniprogramRoot": "",
+	"pluginRoot": "",
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -22,6 +27,13 @@
 		},
 		"conversation": {
 			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
 			"list": []
 		},
 		"miniprogram": {

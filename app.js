@@ -33,9 +33,14 @@ App({
       }
     })
   },
+  
   globalData: {
     userInfo: null,
-    people: ["请选择你要打的人", "于航", "Jack", "飞飞飞","npc","KOA"],
-    index: 0
+    people: ["请选择你要打的人", "自定义","于航", "Jack", "飞飞飞","npc","KOA"],
+    index: 0,
+    circleColor:"#EE6363",
+    danmu:'',
+    mingzi:'你自己',
+    image:''
   }
 })

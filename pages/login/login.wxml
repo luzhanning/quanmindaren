@@ -1,31 +1,47 @@
 <!--logs.wxml-->
 
 <view class="page">
-    <view class="page__hd">
-        <view class="section__ctn">
-            <image src="../images/logoko.png" style="width:220px; height:180px;" ></image>
-        </view>
-    </view>
-    <view class="container2">
+<view class="container2">
+   
+            <image src="../images/quanmin.png" style="width:184px; height:133px;" ></image>
+    
     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-    </view>
+    
     <view class="page__bd">
       <view class="section">
-        <text>名称：</text>
+        <text style="color:white">名称：</text>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   
       </view>
       <view class="section">
-        <text>性别：</text>
+        <text style="color:white">性别：</text>
         <text wx:if="{{userInfo.gender==1}}" class="userinfo-nickname">男</text>
         <text wx:if="{{userInfo.gender==2}}" class="userinfo-nickname">女</text>
       </view>
       <view class="section">
-        <text>来自：</text>
+        <text style="color:white">来自：</text>
         <text wx:if="{{userInfo.province}}!=null"class="userinfo-nickname">{{userInfo.province}},</text>
         <text wx:if="{{userInfo.city}}!=null"class="userinfo-nickname"> {{userInfo.city}}</text>
         
       </view>
+      <view class="section">
+        <text style="color:white">于航：</text>
+        <text wx:if="{{userInfo.province}}!=null"class="userinfo-nickname">{{a1}}, </text>
+          <text style="color:white">飞飞飞：</text>
+        <text wx:if="{{userInfo.province}}!=null"class="userinfo-nickname">{{a3}},</text>
+        
+      </view>
 
+      <view class="section">
+        <text style="color:white">Jack：</text>
+        <text wx:if="{{userInfo.province}}!=null"class="userinfo-nickname">{{a2}}, </text>
+      <text style="color:white">npc：</text>
+        <text wx:if="{{userInfo.province}}!=null"class="userinfo-nickname">{{a4}}</text>
+
+        
+      </view>
+      
+     <ad unit-id="adunit-cda5ce39db3f109d"></ad> 
     </view>
+   </view>
 </view>

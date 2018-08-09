@@ -2,14 +2,6 @@
 page{
   height:100%
 }
-.ripple1 {
-  pointer-events:none;
-   font-size:15px;
-    opacity:0.4;
-    margin-top: -104px;
-    margin-left:-15px;
-    position: absolute;
-}
 .chessboard
 {
 	background:white;
@@ -24,7 +16,6 @@ page{
 	flex-direction: column;
 	padding: 6rpx;
 }
-
 .ripple {
   pointer-events:none;
     border-radius: 10px;
@@ -36,7 +27,7 @@ page{
 }
 @-webkit-keyframes ripple {
     100% {
-    -webkit-transform: scale(12);
+    -webkit-transform: scale(6);
     transform: scale(3);
     background-color: transparent;
     }
@@ -92,8 +83,9 @@ page{
   border:5rpx solid white;
 	border-radius: 10rpx;
 }
+
 .but{
-  color:white;
+  
   margin-left:200rpx;
   align-self: center;
 }
@@ -103,3 +95,12 @@ page{
     background:linear-gradient(120deg, rgba(58, 58, 58, 0.808), rgba(131, 130, 131, 0.555));
     background-size: 100% 100%;
 }
+.ripple1 {
+  pointer-events:none;
+   font-size:15px;
+    opacity:0.4;
+    margin-top: -104px;
+    margin-left:-15px;
+    position: absolute;
+}
+

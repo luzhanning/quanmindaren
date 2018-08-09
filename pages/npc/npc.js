@@ -9,7 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    array: ['', '', '', '', '', '', '', '', '', ''],
+    i: 0,
+    danmu: app.globalData.danmu,
     percent: 0,
+    circleColor: '',
     setInter: '',
     setInter1: '',
     setInter2: '',
@@ -41,8 +45,9 @@ Page({
 
 
     this.setData({
-      score: 0
-
+      score: 0,
+      circleColor: app.globalData.circleColor,
+      danmu: app.globalData.danmu
     })
 
     if (app.globalData.people[app.globalData.index] == 'npc') {
@@ -51,7 +56,7 @@ Page({
         person: '../images/npc.png'
 
       })
-      innerAudioContext.src = 'http://mp3.flash127.com/music/43834.mp3'
+      innerAudioContext.src = 'https://www.beico.hk/audio/npc.mp3'
 
     }
 
@@ -62,16 +67,44 @@ Page({
   },
 
   onReady: function () {
-    var interval = setInterval(function () {
+    var that = this;
+    that.data.setInter4 = setInterval(function () {
       this.setData({
         seconds: this.data.seconds - 1
       });
+      if(this.data.seconds<=0){
+      wx.getUserInfo({
+        success: function (res) {
+          wx.request({
+            url: 'https://www.beico.hk/newScore',
+            method: 'POST',
+            data: util.json2Form({
+              nickname: res.userInfo.nickName,
+              score: that.data.score,
+              type: "4"
+            }),
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            success: function (res) {
+              // success
+
+
+            },
+            fail: function () {
+              // fail
+            },
+            complete: function () {
+              // complete
+            }
+          })
+
+        }
+      })
+      
+      }
     }.bind(this), 1000);
-
-
-  },
-  onShow: function () {
-    var that = this;
+    
     that.data.setInter = setInterval(function () {
       that.setData({
         a: that.data.a * (-1)
@@ -79,21 +112,21 @@ Page({
       });
 
     }.bind(this), 70)
-    
+
     that.data.setInter1 = setInterval(function () {
       if (that.data.score < 20) {
-      var array = that.data.chessboardDatas
-      that.swtichArray(array);
-      that.setData({
-        chessboardDatas: array
+        var array = that.data.chessboardDatas
+        that.swtichArray(array);
+        that.setData({
+          chessboardDatas: array
 
-      });
-     
+        });
+
       }
-     
+
     }.bind(this), 400)
-    
-     
+
+
     that.data.setInter2 = setInterval(function () {
       if (that.data.score >= 20) {
         var array = that.data.chessboardDatas
@@ -102,10 +135,50 @@ Page({
           chessboardDatas: array
 
         });
-        }
-      }.bind(this), 300)
+      }
+    }.bind(this), 300)
+
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+
+    }
+    return {
+      title: '我打死了' + this.data.score + '个' + this.data.hit + ',快来看看',
+      path: '/pages/index/index',
+      imageUrl: this.data.image
+    }
+  },
+  onShow: function () {
+    
     
 
+  },
+  containerTap: function (res) {
+   
+    var x = res.touches[0].pageX;
+    var y = res.touches[0].pageY + 85;
+
+    var array1 = this.data.array;
+    array1[this.data.i] = 'top:' + y + 'px;left:' + x + 'px;'
+    if (this.data.i != 50) {
+      this.setData({
+        i: this.data.i + 1
+      });
+    }
+    else {
+      this.setData({
+        i: 0
+      });
+    }
+    this.setData({
+      rippleStyle: ''
+    });
+    this.setData({
+      rippleStyle: 'top:' + y + 'px;left:' + x + 'px;-webkit-animation: ripple 0.3s linear;animation:ripple 0.3s linear;',
+      array: array1
+    });
   },
   swtichArray: function(array){
     var loopcount = 0
@@ -143,11 +216,11 @@ Page({
     wx.navigateBack({ changed: true })
   },
   onUnload: function () {
-    var that = this;
-
+    
     clearInterval(this.data.setInter)
     clearInterval(this.data.setInter1)
     clearInterval(this.data.setInter2)
+    clearInterval(this.data.setInter4)
   },
   click: function (e) {
     innerAudioContext.stop();
@@ -194,6 +267,35 @@ Page({
     clearInterval(this.data.setInter1)
     clearInterval(this.data.setInter2)
     var that = this;
+    var score1 = this.data.score
+    wx.getUserInfo({
+      success: function (res) {
+        wx.request({
+          url: 'https://www.beico.hk/newScore',
+          method: 'POST',
+          data: util.json2Form({
+            nickname: res.userInfo.nickName,
+            score: score1,
+            type: "4"
+          }),
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          success: function (res) {
+            // success
+
+
+          },
+          fail: function () {
+            // fail
+          },
+          complete: function () {
+            // complete
+          }
+        })
+
+      }
+    })
     that.data.setInter = setInterval(function () {
       that.setData({
         a: that.data.a * (-1)

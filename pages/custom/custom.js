@@ -2,6 +2,7 @@
 var app = getApp();
 var util = require('../../utils/util.js')
 const innerAudioContext = wx.createInnerAudioContext()
+var context = wx.createCanvasContext('share')
 Page({
 
   /**
@@ -11,24 +12,26 @@ Page({
     danmu: app.globalData.danmu,
     array: ['', '', '', '', '', '', '', '', '', ''],
     j: 0,
-    a:1,
+    a: 1,
     setInter: '',
     setInter2: '',
+    setInter3: '',
     circleColor: '',
     percent: 100,
     person: '',
     person1: '',
     score: 0,
-    second:0,
+    second: 0,
     chessboardDatas: [
       [0, 0, 0],
       [0, 0, 0],
       [0, 0, 0],
       [0, 1, 0]
     ],
-    big:0,
-    hit: app.globalData.people[app.globalData.index],
-    i:0
+    big: 0,
+    hit: app.globalData.mingzi,
+    i: 0,
+    image: app.globalData.image,
 
 
   },
@@ -36,47 +39,54 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-
-  onLoad: function (options) {
-    
-    innerAudioContext.obeyMuteSwitch = false;
-
-    this.setData({
-      score: 0,
-      second:0,
-      circleColor: app.globalData.circleColor,
-      danmu: app.globalData.danmu
-    })
-
-    if (app.globalData.people[app.globalData.index] == 'Jack') {
-      this.setData({
-        person: '../images/jack.png',
-        person1: '../images/jack2.jpg',
-      
-      })
-    
-            innerAudioContext.src = 'https://www.beico.hk/audio/fei8.mp3' 
-
-    }
- 
-    this.setData({
-      hit: app.globalData.people[app.globalData.index]
-    })
-
-  },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
-
+    
     }
     return {
-      title: '我打死了' + this.data.score + '个' + this.data.hit + ',快来看看',
+      title: '我打死了'+this.data.score+'个'+this.data.hit+',快来看看',
       path: '/pages/index/index',
       imageUrl: this.data.image
-    }
+          }
   },
-  onReady: function () {
+    
+
+  onLoad: function (options) {
+
+    innerAudioContext.obeyMuteSwitch = false;
+    
+    this.setData({
+      score: 0,
+      second: 0,
+      circleColor: app.globalData.circleColor,
+      danmu: app.globalData.danmu,
+      image: app.globalData.image,
+      hit: app.globalData.mingzi
+    })
+    
+    if (app.globalData.image==''){
+      this.setData({
+       
+        image: app.globalData.userInfo.avatarUrl
+        
+      })
+    }
+
+    
+  
+    innerAudioContext.src = 'https://www.beico.hk/audio/fei8.mp3' 
+          
+    
    
+  },
+
+  onReady: function () {
+    
+  
+    context.rect(0, 0, 375, 275)
+    context.stroke()
+    context.draw(false, this.getTempFilePath)
     var that = this;
     that.data.setInter = setInterval(function () {
       that.setData({
@@ -107,7 +117,7 @@ Page({
 
     }.bind(this), 1500)
 
-    that.data.setInter3 = setInterval(function () {
+    that.data.setInter3= setInterval(function () {
       if (this.data.second < 3) {
         this.setData({
           i: 7
@@ -148,53 +158,30 @@ Page({
           i: 23
         });
       }
+
       this.setData({
         percent: this.data.percent - this.data.i,
         second: this.data.second + 1
       });
-      var that = this
-      var score1 = this.data.score
-      if(this.data.percent<=0){
-      wx.getUserInfo({
-        success: function (res) {
-          wx.request({
-            url: 'https://www.beico.hk/newScore',
-            method: 'POST',
-            data: util.json2Form({
-              nickname: res.userInfo.nickName,
-              score: score1,
-              type: "2"
-            }),
-            header: {
-              "Content-Type": "application/x-www-form-urlencoded"
-            },
-            success: function (res) {
-              // success
-
-
-            },
-            fail: function () {
-              // fail
-            },
-            complete: function () {
-              // complete
-            }
-          })
-          if (that.data.score >= 100) {
+      if (this.data.percent==0){
+        var that = this
+        var score1 = this.data.score
+        wx.getUserInfo({
+          success: function (res) {
             wx.request({
-              url: 'https://www.beico.hk/chuang',
+              url: 'https://www.beico.hk/newCustom',
               method: 'POST',
               data: util.json2Form({
                 nickname: res.userInfo.nickName,
-                feifeifei: "1"
-
+                score: score1,
+                name: that.data.hit
               }),
               header: {
                 "Content-Type": "application/x-www-form-urlencoded"
               },
               success: function (res) {
                 // success
-                console.log(res)
+
 
               },
               fail: function () {
@@ -205,20 +192,16 @@ Page({
               }
             })
           }
-        }
-      })
-      
+        })
+   
       }
+     
     }.bind(this), 1000);
-    
-   
-    
-   
-    
-    
-
   },
+  containerTap: function (res) {
 
+   
+  },
   choose: function () {
     wx.navigateBack({ changed: true })
   },
@@ -252,9 +235,6 @@ Page({
       array: array1
     });
   },
-  onHide:function(){
-
-  },
   clickon: function (e) {
 
 
@@ -268,7 +248,7 @@ Page({
 
     var num = util.getRandomNum(0, 11);
     this.setChessboardCellNum(array, num, 1);
-    if (this.data.percent<100){
+    if (this.data.percent < 100) {
       this.setData({
         percent: this.data.percent + 100 / 20,
       });
@@ -302,8 +282,12 @@ Page({
     });
 
   },
-  onShow: function(){
+  onShow: function () {
     
+
+  },
+  onHide: function(){
+   
   },
   reset: function () {
     var chessDefaultDatas = [
@@ -312,9 +296,11 @@ Page({
       [0, 0, 0],
       [0, 0, 0]
     ];
-    var that=this
+
     var num = util.getRandomNum(0, 11);
     this.setChessboardCellNum(chessDefaultDatas, num, 1);
+    var that = this
+    var score1 = this.data.score
     
 
     this.setData({
@@ -323,12 +309,16 @@ Page({
       second: 0,
       percent: 100
     });
+   
   },
   onUnload: function () {
-    var that=this
+    var that = this;
+
     clearInterval(that.data.setInter)
     clearInterval(that.data.setInter2)
     clearInterval(that.data.setInter3)
+   
+   
   },
   setChessboardCellNum: function (array, index, num) {
     var loopCount = 0;
@@ -339,6 +329,35 @@ Page({
         }
       }
     }
+  },
+  getTempFilePath: function () {
+    wx.canvasToTempFilePath({
+      canvasId: 'share',
+      success: (res) => {
+        this.setData({
+          shareTempFilePath: res.tempFilePath
+        })
+      }
+    })
+  },
+  saveImageToPhotosAlbum: function () {
+    if (!this.data.shareTempFilePath) {
+      wx.showModal({
+        title: '提示',
+        content: '图片绘制中，请稍后重试',
+        showCancel: false
+      })
+    }
+    context.drawImage('../images/dead.png', 100, 0, 170, 145)
+    wx.saveImageToPhotosAlbum({
+      filePath: this.data.shareTempFilePath,
+      success: (res) => {
+        console.log(res)
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
   }
 
 })

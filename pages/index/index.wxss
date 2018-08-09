@@ -1,6 +1,7 @@
 /**index.wxss**/
 page{
   height:100%;
+  align-items: center;
 }
 .userinfo {
   display: flex;
@@ -18,12 +19,12 @@ page{
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #444444;
 
 }
 
 .usermotto {
-  margin-top: 20px;
+
   margin-right: 45rpx;
   margin-left: 35rpx;
   align-self: center;
@@ -32,7 +33,7 @@ page{
 .page {
   width: 100%;
     height:100%;
-    background:linear-gradient(120deg, lightgray, white);
+    background:linear-gradient(120deg, rgba(58, 58, 58, 0.808), rgba(131, 130, 131, 0.555));
     background-size: 100% 100%;
 }
 .kaishi{
@@ -51,3 +52,29 @@ page{
   font-weight:700; 
   color:#666666;
 }
+
+.ripple {
+    background-color: #999999;
+    border-radius: 1.5px;
+    height:3px;
+    width:3px;
+    margin-top: -90px;
+    position: absolute;
+    -webkit-transform: scale(0);
+}
+@-webkit-keyframes ripple {
+    100% {
+    -webkit-transform: scale(12);
+    transform: scale(12);
+    background-color: transparent;
+    }
+}
+.container2 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+} 
